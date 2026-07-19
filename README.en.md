@@ -96,6 +96,7 @@ We have added a vocabulary learning database (`learning_harness.db`) mapping all
 
 - **Local JSON Lexicon Source:** [quran_arabic_roots_lane_lexicon_2026-02-12.json](file:///c:/Users/Muhajir/Downloads/quranic-corpus-morphology-0.4/quran_arabic_roots_lane_lexicon_2026-02-12.json) (11MB local cache of Lane's Arabic-English Lexicon database).
 - **Harness Builder Script:** [build_learning_harness.py](file:///c:/Users/Muhajir/Downloads/quranic-corpus-morphology-0.4/build_learning_harness.py).
+- **Interactive Google Colab Notebook:** [learning_harness_colab.en.ipynb](file:///c:/Users/Muhajir/Downloads/quranic-corpus-morphology-0.4/learning_harness_colab.en.ipynb) (standalone Colab notebook to build and query the harness).
 - **Generated Database:** `learning_harness.db` containing table `learning_harness` with schema:
   - `id` (INTEGER PRIMARY KEY)
   - `root` (TEXT) - Arabic root (e.g., `رحم`)

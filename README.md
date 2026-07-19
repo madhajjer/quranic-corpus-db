@@ -96,6 +96,7 @@ Kami telah menambahkan database pembelajaran kosakata (`learning_harness.db`) ya
 
 - **Sumber Kamus JSON Lokal:** [quran_arabic_roots_lane_lexicon_2026-02-12.json](file:///c:/Users/Muhajir/Downloads/quranic-corpus-morphology-0.4/quran_arabic_roots_lane_lexicon_2026-02-12.json) (Cache lokal 11MB dari database Lane's Arabic-English Lexicon).
 - **Skrip Pembuat Database:** [build_learning_harness.py](file:///c:/Users/Muhajir/Downloads/quranic-corpus-morphology-0.4/build_learning_harness.py).
+- **Notebook Google Colab Interaktif:** [learning_harness_colab.ipynb](file:///c:/Users/Muhajir/Downloads/quranic-corpus-morphology-0.4/learning_harness_colab.ipynb) (notebook Colab mandiri untuk membangun dan mencari kueri di database kosakata).
 - **Database Hasil Pembuatan:** `learning_harness.db` yang berisi tabel `learning_harness` dengan skema:
   - `id` (INTEGER PRIMARY KEY)
   - `root` (TEXT) - Akar kata Arab (misal: `رحم`)
