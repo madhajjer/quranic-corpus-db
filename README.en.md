@@ -87,3 +87,23 @@ JOIN verses v ON f.sura_id = v.sura_id AND f.verse_num = v.verse_num
 WHERE verses_fts MATCH 'translation:Paradise'
 LIMIT 5;
 ```
+
+---
+
+## 🧠 Vocabulary Learning Harness Database
+
+We have added a vocabulary learning database (`learning_harness.db`) mapping all 1,642 roots in the Quran to their core vocabulary definitions in both English and Indonesian.
+
+- **Local JSON Lexicon Source:** [quran_arabic_roots_lane_lexicon_2026-02-12.json](file:///c:/Users/Muhajir/Downloads/quranic-corpus-morphology-0.4/quran_arabic_roots_lane_lexicon_2026-02-12.json) (11MB local cache of Lane's Arabic-English Lexicon database).
+- **Harness Builder Script:** [build_learning_harness.py](file:///c:/Users/Muhajir/Downloads/quranic-corpus-morphology-0.4/build_learning_harness.py).
+- **Generated Database:** `learning_harness.db` containing table `learning_harness` with schema:
+  - `id` (INTEGER PRIMARY KEY)
+  - `root` (TEXT) - Arabic root (e.g., `رحم`)
+  - `en_word` (TEXT) - English vocabulary definition
+  - `id_word` (TEXT) - Indonesian vocabulary definition (translated on-the-fly)
+
+### How to rebuild / run the harness:
+```bash
+python3 build_learning_harness.py
+```
+

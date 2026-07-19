@@ -87,3 +87,23 @@ JOIN verses v ON f.sura_id = v.sura_id AND f.verse_num = v.verse_num
 WHERE verses_fts MATCH 'translation:Paradise'
 LIMIT 5;
 ```
+
+---
+
+## 🧠 Database Pembelajaran Kosakata (Learning Harness)
+
+Kami telah menambahkan database pembelajaran kosakata (`learning_harness.db`) yang memetakan seluruh 1.642 akar kata Arab di dalam Al-Quran ke dalam arti kosakata inti baik dalam bahasa Inggris maupun bahasa Indonesia.
+
+- **Sumber Kamus JSON Lokal:** [quran_arabic_roots_lane_lexicon_2026-02-12.json](file:///c:/Users/Muhajir/Downloads/quranic-corpus-morphology-0.4/quran_arabic_roots_lane_lexicon_2026-02-12.json) (Cache lokal 11MB dari database Lane's Arabic-English Lexicon).
+- **Skrip Pembuat Database:** [build_learning_harness.py](file:///c:/Users/Muhajir/Downloads/quranic-corpus-morphology-0.4/build_learning_harness.py).
+- **Database Hasil Pembuatan:** `learning_harness.db` yang berisi tabel `learning_harness` dengan skema:
+  - `id` (INTEGER PRIMARY KEY)
+  - `root` (TEXT) - Akar kata Arab (misal: `رحم`)
+  - `en_word` (TEXT) - Arti kosakata dalam bahasa Inggris
+  - `id_word` (TEXT) - Arti kosakata dalam bahasa Indonesia (diterjemahkan otomatis)
+
+### Cara membuat ulang / menjalankan skrip:
+```bash
+python3 build_learning_harness.py
+```
+
