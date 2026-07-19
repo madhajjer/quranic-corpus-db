@@ -108,3 +108,26 @@ We have added a vocabulary learning database (`learning_harness.db`) mapping all
 python3 build_learning_harness.py
 ```
 
+---
+
+## 🙏 Credits & Acknowledgements
+
+This project is a **derivative work** built on top of data and research produced by others. Full credit for the linguistic and textual data belongs to:
+
+- **Quranic Arabic Corpus (morphology, version 0.4)** — © 2011 **Kais Dukes**, University of Leeds. Licensed under the **GNU General Public License**. Primary source of the token-by-token morphology data. <http://corpus.quran.com>
+- **Extended Quranic Treebank (EQTB)** — dependency treebank data from corpus.quran.com, used for dependency-graph reconstruction.
+- **Tanzil Project** (<https://tanzil.info>) — Uthmani Quran text and the **Sahih International** English translation.
+- **AlQuran Cloud API** (<https://alquran.cloud>) — Surah metadata (names, revelation place, verse counts).
+- **Lane's Arabic-English Lexicon** (Edward William Lane, 1863–1893) — public-domain lexicon used for root meanings in the learning harness. The digitized root→definition JSON dataset is sourced from the **[aliozdenisik/quran-arabic-roots-lane-lexicon](https://github.com/aliozdenisik/quran-arabic-roots-lane-lexicon)** project on GitHub, with thanks to its author.
+- **Google Translate** — Indonesian glosses in the learning harness are generated automatically via an unofficial endpoint; accuracy is not guaranteed.
+
+## 📜 License
+
+Because the Quranic Arabic Corpus morphology data is licensed under the **GNU General Public License (GPL)**, this derivative work and all generated database (`.db`) files derived from it are likewise subject to the **GPL**. The copyright block in `quranic-corpus-morphology-0.4.txt` **must not be removed or altered**, and any copy must include a link to <http://corpus.quran.com>.
+
+## ⚠️ Disclaimer
+
+- This software is provided **"as-is"**, without warranty of any kind. Use at your own risk.
+- Translations and glosses are **human/machine interpretations**, not the original Arabic text of the Quran. For religious or scholarly use, always refer to the authoritative Arabic source.
+- This project is **not affiliated with or endorsed by** corpus.quran.com, Tanzil, AlQuran Cloud, or the University of Leeds. It merely consumes the data they publish.
+

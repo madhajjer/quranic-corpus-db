@@ -108,3 +108,26 @@ Kami telah menambahkan database pembelajaran kosakata (`learning_harness.db`) ya
 python3 build_learning_harness.py
 ```
 
+---
+
+## 🙏 Kredit & Penghargaan (Credits & Acknowledgements)
+
+Proyek ini adalah karya turunan (*derivative work*) yang dibangun di atas sejumlah sumber data dan penelitian pihak lain. Seluruh penghargaan atas data linguistik dan tekstual diberikan kepada sumber-sumber berikut:
+
+- **Quranic Arabic Corpus (morfologi, versi 0.4)** — © 2011 **Kais Dukes**, University of Leeds. Dilisensikan di bawah **GNU General Public License**. Sumber utama data morfologi token-demi-token. <http://corpus.quran.com>
+- **Extended Quranic Treebank (EQTB)** — data pohon sintaksis (*treebank*) dependensi dari corpus.quran.com, digunakan untuk rekonstruksi grafik dependensi.
+- **Tanzil Project** (<https://tanzil.info>) — teks Al-Quran Utsmani dan terjemahan bahasa Inggris **Sahih International**.
+- **AlQuran Cloud API** (<https://alquran.cloud>) — metadata Surah (nama, tempat turun, jumlah ayat).
+- **Lane's Arabic-English Lexicon** (Edward William Lane, 1863–1893) — leksikon domain publik yang digunakan untuk arti akar kata pada *learning harness*. Dataset JSON akar→definisi hasil digitalisasi bersumber dari proyek **[aliozdenisik/quran-arabic-roots-lane-lexicon](https://github.com/aliozdenisik/quran-arabic-roots-lane-lexicon)** di GitHub, dengan penghargaan kepada penulisnya.
+- **Google Translate** — glosa bahasa Indonesia pada *learning harness* dihasilkan secara otomatis melalui endpoint tak resmi; akurasinya tidak dijamin.
+
+## 📜 Lisensi (License)
+
+Karena data morfologi Quranic Arabic Corpus dilisensikan di bawah **GNU General Public License (GPL)**, karya turunan ini beserta seluruh berkas database (`.db`) yang dihasilkan darinya juga tunduk pada ketentuan **GPL**. Blok hak cipta pada berkas `quranic-corpus-morphology-0.4.txt` **tidak boleh dihapus atau diubah**, dan setiap penyalinan wajib mencantumkan tautan ke <http://corpus.quran.com>.
+
+## ⚠️ Penafian (Disclaimer)
+
+- Perangkat lunak ini disediakan **"sebagaimana adanya" (as-is)**, tanpa jaminan dalam bentuk apa pun. Gunakan atas risiko Anda sendiri.
+- Terjemahan dan glosa merupakan **interpretasi manusia/mesin**, bukan teks Arab asli Al-Quran. Untuk keperluan keagamaan atau akademis, selalu rujuk pada teks Arab dan sumber otoritatif.
+- Proyek ini **tidak berafiliasi dengan dan tidak didukung oleh** corpus.quran.com, Tanzil, AlQuran Cloud, maupun University of Leeds. Ia sekadar mengonsumsi data yang mereka publikasikan.
+
