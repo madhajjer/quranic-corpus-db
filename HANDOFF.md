@@ -1,6 +1,6 @@
 # HANDOFF — Recreate corpus.quran.com dependency graphs locally
 
-**Date:** 2026-07-19. **Status:** research done, data acquired. Next step: build the SQLite loader + renderer.
+**Date:** 2026-07-19. **Status:** loader + first renderer BUILT (see "Progress" below). Next: validate renders vs corpus.quran.com PNGs, polish layout, update READMEs.
 **This repo was recloned into WSL at `~/hajir`** (Windows Python was a WindowsApps stub
 with no permission — do Python work in WSL from now on). See `.agent-memory/` in this repo
 for full session memory (also readable by Claude Code automatically); it was moved here
@@ -74,6 +74,33 @@ Arabic subject/predicate labels.
 `geometry.ts`; SVG rendering in `src/treebank/syntax-graph-view.tsx`, `arc-arrow.tsx`,
 `svg-arabic-token.tsx`. Arabic relation-name map (46 tags → Arabic) is in
 `src/corpus/syntax/syntax-service.ts`.
+
+## Progress (2026-07-19, post-WSL-migration session)
+
+Steps 1–3 of the plan below are DONE:
+
+- **`Quranic.csv` inspected** (recovered from the Windows dir; also extractable from the
+  rar). It is **UTF-16 LE, tab-separated, CRLF, 51 columns** (not 43), 139,376 rows.
+  Verified semantics: `token_id` is **sentence-local** (0-based; sentences span verses —
+  e.g. sentence 2 = 1:2–1:4); `ref_token_id` = head's sentence-local token_id;
+  `rel_label='root'` self-points; `'NonRel'` = no arc (DET segments); rows with
+  location `_` / form `(*)` are elided (taqdir) words (11,157 of them); `is_constituent=1`
+  opens a phrase span via `constituents_loc` `[a-b]` + `constituent_label`.
+  `uthmani_unicode` is actually Buckwalter. `re_uthmani`/`rpos`/`loc1`/`depend_rel`/
+  `head_rel` semantics still unclear (shifted-by-one echoes of neighbor tokens) — unused.
+- **`build_treebank.py`** — builds `quran_treebank.db`: `sentences` (11,693),
+  `graph_tokens` (139,376; keyed `(sura_id, verse_num, word_num, token_num)`),
+  `graph_edges` (103,781), `graph_phrases` (26,430), plus `rel_labels` / `pos_tags`
+  lexicons with display colors. **Join vs `quran_morphology.db` tokens: 128,219/128,219
+  non-elided tokens match** on the natural key.
+- **`render_graph.py`** — `python3 render_graph.py 1:1` emits standalone SVG per
+  sentence: RTL Arabic baseline, POS colors from `pos_tags`, grey elided words, arcs
+  below with Arabic labels colored from `rel_labels`, arc-height stacking (nested arcs
+  raised), phrase brackets. Structure verified textually; **not yet visually compared**
+  to corpus.quran.com PNGs (no SVG rasterizer in WSL; open the SVG in a browser).
+
+Remaining: plan steps 4–5 (visual validation vs `/graphimage?id=N`, layout polish —
+text-width estimation is crude `len*0.55em` — then README.md/README.en.md updates).
 
 ## Plan (next session)
 
