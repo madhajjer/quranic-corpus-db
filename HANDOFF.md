@@ -1,8 +1,10 @@
 # HANDOFF — Recreate corpus.quran.com dependency graphs locally
 
 **Date:** 2026-07-19. **Status:** research done, data acquired. Next step: build the SQLite loader + renderer.
-**Next session runs in WSL** (Windows Python was a WindowsApps stub with no permission). Project path from WSL:
-`/mnt/c/Users/Muhajir/Downloads/quranic-corpus-morphology-0.4`
+**This repo was recloned into WSL at `~/hajir`** (Windows Python was a WindowsApps stub
+with no permission — do Python work in WSL from now on). See `.agent-memory/` in this repo
+for full session memory (also readable by Claude Code automatically); it was moved here
+from the Windows-side memory store since that store won't follow the reclone.
 
 ## Goal
 Reconstruct the syntactic dependency graphs from
